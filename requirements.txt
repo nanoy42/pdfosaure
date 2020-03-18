@@ -1,0 +1,4 @@
+img2pdf
+docopt
+pdf2image
+PyPDF2
