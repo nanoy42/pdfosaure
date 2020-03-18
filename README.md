@@ -1,5 +1,7 @@
 # Pdfosaure
 
+![pdfosaure](https://images.nanoy.fr/dino.jpg)
+
  * [Introduction](#introduction)
  * [Installation](#installation)
  * [Command lime usage](#command-line-usage)
@@ -19,6 +21,8 @@ Pdfosaure is small python utility to do a bunch of actions on pdf files :
  * merge jpeg images to create a pdf file
 
 Pdfosaure is a hungry dino tooling up pdfs.
+
+Special thanks to zaiken for the logo.
 ## Installation
 
 For now the script can only be installed from the sources. Clone the git repository :
