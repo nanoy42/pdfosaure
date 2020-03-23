@@ -61,30 +61,11 @@ from PyPDF2 import PdfFileReader, PdfFileWriter
 def get_infos(filename):
     pdf = PdfFileReader(open(filename, "rb"))
     infos = pdf.getDocumentInfo()
-    msg = """
-    Author : {}
-    Creation date : {}
-    Creator: {}
-    Keywords: {}
-    Modification date : {}
-    Producer : {}
-    Subject : {}
-    Title : {}
-    Number of pages : {}
-    Encrypted : {}
-    """.format(
-        infos["/Author"],
-        infos["/CreationDate"],
-        infos["/Creator"],
-        infos["/Keywords"],
-        infos["/ModDate"],
-        infos["/Producer"],
-        infos["/Subject"],
-        infos["/Title"],
-        pdf.getNumPages(),
-        pdf.isEncrypted,
-    )
-    return msg
+    for key, item in infos.items():
+        print("{}: {}".format(key[1:], item))
+    print("Number of pages: {}".format(pdf.getNumPages()))
+    print("Encrypted: {}".format(pdf.isEncrypted))
+    print("Size: {}".format(get_size(filename)))
 
 
 def write(output, filename, output_filename):
@@ -386,7 +367,7 @@ def get_size(filename):
 if __name__ == "__main__":
     arguments = docopt(__doc__, version="Pdfosaure 0.1")
     if arguments["infos"]:
-        print(get_infos(arguments["<filename>"]))
+        get_infos(arguments["<filename>"])
     elif arguments["encrypt"]:
         password = getpass.getpass()
         encrypt(
