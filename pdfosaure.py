@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 # Pdfosaure - Hungry dino tooling up pdfs
 # Copyright (C) 2020 Yoann Pietri
 
@@ -72,7 +73,7 @@ def write(output, filename, output_filename):
     """Write output pdf to output_filename
 
     A trick is needed if the output_filename is the same as the original filename
-    
+
     Args:
         output (PdfFileWriter): PdfFileWriter to write
         filename (string): Original filename
@@ -87,7 +88,7 @@ def write(output, filename, output_filename):
 
 def encrypt(filename, password, output_filename):
     """Encrypt a pdf file
-    
+
     Args:
         filename (string): filename of the input pdf file
         password (string): password for encryption
@@ -106,7 +107,7 @@ def encrypt(filename, password, output_filename):
 
 def decrypt(filename, password, output_filename):
     """Decrupt a pdf file
-    
+
     Args:
         filename (string): filename of the input pdf file
         password (string): password for encryption
@@ -127,9 +128,9 @@ def rotate_pages(filename, angle, include, exclude, output_filename):
     """Rotate pages of a given angle.
 
     Pages are specified either by include parameter (which pages should be rotated)
-    or by exclude paramater (which pages sould not be rotated). Angle should be 
+    or by exclude paramater (which pages sould not be rotated). Angle should be
     a multiple of 90.
-    
+
     Args:
         filename (string): filename of the input pdf file
         angle (int): rotation angle. Should be a multiple of 90.
@@ -162,7 +163,7 @@ def rotate_all_pages(filename, angle, output_filename):
     """Rotate all pages of a given angle.
 
     The angle should be a multiple of 90.
-    
+
     Args:
         filename (string): filename of the input pdf file.
         angle (int): rotation angle. Should be a multiple of 90.
@@ -184,8 +185,8 @@ def scale_pages(filename, include, exclude, scale_x, scale_y, output_filename):
     """Scale given pages by x and y factors
 
     Pages are specified either by include parameter (which pages should be scaled)
-    or by exclude paramater (which pages sould not be scaled).    
-    
+    or by exclude paramater (which pages sould not be scaled).
+
     Args:
         filename (string): filename of the input pdf file
         include (list of int): list of pages to scale.
@@ -213,7 +214,7 @@ def scale_pages(filename, include, exclude, scale_x, scale_y, output_filename):
 
 def scale_all_pages(filename, scale_x, scale_y, output_filename):
     """Scale all pages by x and y factors.
-    
+
     Args:
         filename (string): filename of the input pdf file.
         scale_x (int): scale factor in x direction.
@@ -231,7 +232,7 @@ def scale_all_pages(filename, scale_x, scale_y, output_filename):
 
 def compress(filename, output_filename):
     """Compress pdf file.
-    
+
     Args:
         filename (string): filename of the input pdf file.
         output_filename (string): filename of the output pdf file.
@@ -247,7 +248,7 @@ def compress(filename, output_filename):
 
 def merge(output_filename, *args):
     """Merge pdf files.
-    
+
     Args:
         output_filename (string): filename of the output pdf file.
         *args (strings): filenames of input pdf files.
@@ -262,7 +263,7 @@ def merge(output_filename, *args):
 
 def explode(filename, output_scheme):
     """Create 1 pdf file for page in input pdf.
-    
+
     Args:
         filename (string): filename of the input pdf file.
         output_scheme (string): pdf files will have the following name: {output_scheme}-{number}.pdf
@@ -277,7 +278,7 @@ def explode(filename, output_scheme):
 
 def split(filename, pages, output_scheme):
     """Create 1 pdf file for each range of page specified by pages.
-    
+
     Args:
         filename (string): filename of the input pdf file.
         pages (list of ints): delimiters of ranges.
@@ -296,7 +297,7 @@ def split(filename, pages, output_scheme):
 
 def pdf_to_jpeg_pages(filename, pages, output_scheme):
     """Export given pages to jpeg files.
-    
+
     Args:
         filename (string): filename of the input pdf file.
         pages (list of ints): pages to export.
@@ -310,7 +311,7 @@ def pdf_to_jpeg_pages(filename, pages, output_scheme):
 
 def pdf_to_jpeg_all_pages(filename, output_scheme):
     """Export all pages of a pdf file to jpeg images.
-    
+
     Args:
         filename (string): filename of the input pdf file.
         output_scheme (string): images will have the following name: {output_scheme}-{number}.jpg
@@ -322,7 +323,7 @@ def pdf_to_jpeg_all_pages(filename, output_scheme):
 
 def jpegs_to_pdf(output_filename, *args):
     """Merge jpeg images in one pdf file.
-    
+
     Args:
         output_filename (string): filename of the ouput pdf file
         *args (strings): filename of jpeg files.
@@ -333,11 +334,11 @@ def jpegs_to_pdf(output_filename, *args):
 
 def delete_pages(filename, pages, output_filename):
     """Delete given pages
-    
+
     Args:
         filename (string): filename of the the input pdf file.
         pages (list of ints): pages to delete.
-        output_filename (string): filename of the output pdf file. 
+        output_filename (string): filename of the output pdf file.
     """
     pdf = PdfFileReader(open(filename, "rb"))
     output = PdfFileWriter()
@@ -350,10 +351,10 @@ def delete_pages(filename, pages, output_filename):
 
 def get_size(filename):
     """Get size of a file
-    
+
     Args:
         filename (string): filename of file to get size.
-    
+
     Returns:
         int: size of the file.
     """
