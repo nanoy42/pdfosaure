@@ -29,6 +29,8 @@ Special thanks to zaiken for the logo.
 
 A one file script is available in the releases section of the github project : https://github.com/nanoy42/pdfosaure/releases.
 
+You can also download the last script version in the actions panel.
+
 ### Developpement
 
 For now the script can only be installed from the sources. Clone the git repository :
