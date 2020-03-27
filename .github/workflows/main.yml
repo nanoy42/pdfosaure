@@ -33,3 +33,9 @@ jobs:
     - name: build with pyinstaller
       run: |
         pyinstaller pdfosaure.py --onefile
+        
+    - name: Upload file
+      uses: actions/upload-artifact@v1
+      with:
+        name: pdfosaure
+        path: dist/pdfosaure
