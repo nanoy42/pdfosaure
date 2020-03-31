@@ -34,7 +34,7 @@ jobs:
       run: pipenv install --dev --pre
     - name: build with pyinstaller
       run: |
-        pyinstaller pdfosaure.py --onefile
+        pipenv run pyinstaller pdfosaure.py --onefile
     - name: Upload file
       uses: actions/upload-artifact@v1
       with:
