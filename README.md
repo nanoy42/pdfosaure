@@ -42,8 +42,16 @@ git clone https://github.com/nanoy42/pdfosaure
 and install the requirements :
 
 ```
-pip3 install -r requirements.txt
+pipenv install --ignore-pipfile
 ```
+
+If you want to intsall development dependencies, you can use 
+
+```
+pipenv install --dev --pre
+```
+
+You can also use the requirements.txt and dev-requirements.txt files.
 
 The script needs 4 dependencies :
  * [PyPDF2](https://pypi.org/project/PyPDF2/)
